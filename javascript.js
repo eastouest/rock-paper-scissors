@@ -9,3 +9,6 @@ function getComputerChoice() {
     };
     return choice;
 }
+
+let playerSelection = prompt("Please type your choice: Rock, paper, scissors")
+alert("You chose " + playerSelection)
