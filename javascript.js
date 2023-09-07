@@ -10,39 +10,41 @@ function getComputerChoice() {
     return choice;
 }
 
+
 let playerSelection = prompt("Please type your choice: Rock, paper, scissors")
 alert("You chose " + playerSelection)
 
+
 function playRound(playerSelection, computerSelection) {
+    greeting = "You chose " + playerSelection + ". The computer chose " + computerSelection + ". " ;
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
-        return "You draw. Try again"
+        return greeting + "You draw. Try again."
     }
     else if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "Paper") {
-            return "You lose. Refresh to play again."
+            return  greeting + "You lose. Refresh to play again."
         }
         else if (computerSelection == "Scissors") {
-            return "You win. Refresh to play again."
+            return  greeting + "You win. Refresh to play again."
         }
     }
     else if (playerSelection.toLowerCase() == "scissors") {
         if (computerSelection == "Paper") {
-            return "You win. Refresh to play again."
+            return  greeting + "You win. Refresh to play again."
         }
         else if (computerSelection == "Rock") {
-            return "You lose. Refresh to play again."
+            return  greeting + "You lose. Refresh to play again."
         }
         else if (playerSelection.toLowerCase() == "paper") {
             if (computerSelection == "Rock") {
-                return "You win. Refresh to play again."
+                return  greeting + "You win. Refresh to play again."
             }
             else if (computerSelection == "Scissors") {
-                return "You lose. Refresh to play again."
+                return  greeting + "You lose. Refresh to play again."
             }
         }
     }
 };
 
 computerSelection = getComputerChoice();
-playerSelection = "rock";
-playRound(playerSelection, computerSelection)
+alert(playRound(playerSelection, computerSelection))
