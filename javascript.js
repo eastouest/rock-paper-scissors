@@ -16,7 +16,7 @@ alert("You chose " + playerSelection)
 
 
 function playRound(playerSelection, computerSelection) {
-    greeting = "You chose " + playerSelection + ". The computer chose " + computerSelection + ". " ;
+    greeting = "You chose " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1) + ". The computer chose " + computerSelection + ". " ;
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         return greeting + "You draw. Try again."
     }
