@@ -18,35 +18,35 @@ let playerWinCounter = 0;
 function playRound(playerSelection, computerSelection) {
     greeting = "You chose " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1) + ". The computer chose " + computerSelection + ". ";
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
-        return greeting + "You draw. Try again."
+        return greeting + "You draw."
     }
     else if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "Paper") {
             computerWinCounter = computerWinCounter + 1;
-            return greeting + "You lose. Refresh to play again."
+            return greeting + "You lose."
         }
         else if (computerSelection == "Scissors") {
             playerWinCounter = playerWinCounter + 1;
-            return greeting + "You win. Refresh to play again."
+            return greeting + "You win."
         }
     }
     else if (playerSelection.toLowerCase() == "scissors") {
         if (computerSelection == "Paper") {
             playerWinCounter = playerWinCounter + 1;
-            return greeting + "You win. Refresh to play again."
+            return greeting + "You win."
         }
         else if (computerSelection == "Rock") {
             computerWinCounter = computerWinCounter + 1;
-            return greeting + "You lose. Refresh to play again."
+            return greeting + "You lose."
         }
         else if (playerSelection.toLowerCase() == "paper") {
             if (computerSelection == "Rock") {
                 playerWinCounter = playerWinCounter + 1;
-                return greeting + "You win. Refresh to play again."
+                return greeting + "You win."
             }
             else if (computerSelection == "Scissors") {
                 computerWinCounter = computerWinCounter + 1;
-                return greeting + "You lose. Refresh to play again."
+                return greeting + "You lose."
             }
         }
     }
