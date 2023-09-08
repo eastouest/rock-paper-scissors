@@ -20,7 +20,17 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         return greeting + "You draw."
     }
-    else if (playerSelection.toLowerCase() == "rock") {
+    if (playerSelection.toLowerCase() == "paper") {
+        if (computerSelection == "Rock") {
+            playerWinCounter = playerWinCounter + 1;
+            return greeting + "You win."
+        }
+        else if (computerSelection == "Scissors") {
+            computerWinCounter = computerWinCounter + 1;
+            return greeting + "You lose."
+        }
+    }
+    if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "Paper") {
             computerWinCounter = computerWinCounter + 1;
             return greeting + "You lose."
@@ -30,7 +40,7 @@ function playRound(playerSelection, computerSelection) {
             return greeting + "You win."
         }
     }
-    else if (playerSelection.toLowerCase() == "scissors") {
+    if (playerSelection.toLowerCase() == "scissors") {
         if (computerSelection == "Paper") {
             playerWinCounter = playerWinCounter + 1;
             return greeting + "You win."
@@ -39,49 +49,40 @@ function playRound(playerSelection, computerSelection) {
             computerWinCounter = computerWinCounter + 1;
             return greeting + "You lose."
         }
-        else if (playerSelection.toLowerCase() == "paper") {
-            if (computerSelection == "Rock") {
-                playerWinCounter = playerWinCounter + 1;
-                return greeting + "You win."
-            }
-            else if (computerSelection == "Scissors") {
-                computerWinCounter = computerWinCounter + 1;
-                return greeting + "You lose."
-            }
-        }
     }
 };
 
 function game() {
-    // have user enter their choice and confirm it in an alert
+    //round 1
     let playerSelection = prompt("Please type your choice: Rock, paper, scissors");
-    //announce game resolution
     computerSelection = getComputerChoice();
+    console.log(computerSelection);
     alert(playRound(playerSelection, computerSelection));
-    // have user enter their choice and confirm it in an alert
+    //round 2
     playerSelection = prompt("Please type your choice: Rock, paper, scissors");
-    //announce game resolution
     computerSelection = getComputerChoice();
+    console.log(computerSelection);
     alert(playRound(playerSelection, computerSelection));
-    // have user enter their choice and confirm it in an alert
+    //round 3
     playerSelection = prompt("Please type your choice: Rock, paper, scissors");
-    //announce game resolution
     computerSelection = getComputerChoice();
+    console.log(computerSelection);
     alert(playRound(playerSelection, computerSelection));
-    // have user enter their choice and confirm it in an alert
+    //round 4
     playerSelection = prompt("Please type your choice: Rock, paper, scissors");
-    //announce game resolution
     computerSelection = getComputerChoice();
+    console.log(computerSelection);
     alert(playRound(playerSelection, computerSelection));
-    // have user enter their choice and confirm it in an alert
+    //round 5
     playerSelection = prompt("Please type your choice: Rock, paper, scissors");
-    //announce game resolution
     computerSelection = getComputerChoice();
+    console.log(computerSelection);
     alert(playRound(playerSelection, computerSelection));
-    if (computerWinCounter > playerWinCounter){
+
+    if (computerWinCounter > playerWinCounter) {
         alert("You have " + playerWinCounter + " points. The computer has " + computerWinCounter + " points. You lose. Refresh to play again.")
     }
-    else if (playerWinCounter > computerWinCounter){
+    else if (playerWinCounter > computerWinCounter) {
         alert("You have " + playerWinCounter + " points. The computer has " + computerWinCounter + " points. You win. Refresh to play again.")
     }
     else {
