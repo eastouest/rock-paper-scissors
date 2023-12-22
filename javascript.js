@@ -14,6 +14,14 @@ function getComputerChoice() {
 let computerWinCounter = 0;
 let playerWinCounter = 0;
 
+let result = document.createElement('div');
+result.textContent = "The result will be displayed here.";
+let result_field = document.createElement('div');
+container.style = "width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 20px;";
+result_field.style = "border: 1px solid black; width: 300px; height: 100px; margin: 0 auto; text-align: center; padding-top: 40px; font-size: 20px; display: block;";
+container.appendChild(result_field);
+result_field.appendChild(result);
+
 let buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
