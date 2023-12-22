@@ -14,6 +14,16 @@ function getComputerChoice() {
 let computerWinCounter = 0;
 let playerWinCounter = 0;
 
+let buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playerSelection = button.id;
+        computerSelection = getComputerChoice();
+        alert(playRound(playerSelection, computerSelection));
+    });
+});
+
 //define the game of Rock, Paper, Scissors and return a greeting
 function playRound(playerSelection, computerSelection) {
     greeting = "You chose " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1) + ". The computer chose " + computerSelection + ". ";
@@ -53,41 +63,60 @@ function playRound(playerSelection, computerSelection) {
 };
 
 function game() {
-    //round 1
-    let playerSelection = prompt("Please type your choice: Rock, paper, scissors");
-    computerSelection = getComputerChoice();
-    console.log(computerSelection);
-    alert(playRound(playerSelection, computerSelection));
-    //round 2
-    playerSelection = prompt("Please type your choice: Rock, paper, scissors");
-    computerSelection = getComputerChoice();
-    console.log(computerSelection);
-    alert(playRound(playerSelection, computerSelection));
-    //round 3
-    playerSelection = prompt("Please type your choice: Rock, paper, scissors");
-    computerSelection = getComputerChoice();
-    console.log(computerSelection);
-    alert(playRound(playerSelection, computerSelection));
-    //round 4
-    playerSelection = prompt("Please type your choice: Rock, paper, scissors");
-    computerSelection = getComputerChoice();
-    console.log(computerSelection);
-    alert(playRound(playerSelection, computerSelection));
-    //round 5
-    playerSelection = prompt("Please type your choice: Rock, paper, scissors");
-    computerSelection = getComputerChoice();
-    console.log(computerSelection);
-    alert(playRound(playerSelection, computerSelection));
+    max_points = 5;
+    while (computerWinCounter < max_points && playerWinCounter < max_points) {
+        // alert("Hello!")
+    }
+        if (computerWinCounter == max_points || playerWinCounter == max_points) {
+            if (computerWinCounter > playerWinCounter) {
+                alert("You have " + playerWinCounter + " points. The computer has " + computerWinCounter + " points. You lose. Refresh to play again.")
+            }
+            else if (playerWinCounter > computerWinCounter) {
+                alert("You have " + playerWinCounter + " points. The computer has " + computerWinCounter + " points. You win. Refresh to play again.")
+            }
+            else {
+                alert("You have " + playerWinCounter + " points. The computer has " + computerWinCounter + " points. You draw. Refresh to play again.")
+            }
+        }
+    // let playerSelection = prompt("Please type your choice: Rock, paper, scissors");
+    // computerSelection = getComputerChoice();
+    // console.log(computerSelection);
+    // alert(playRound(playerSelection, computerSelection));
+    // //round 1
+    // let playerSelection = prompt("Please type your choice: Rock, paper, scissors");
+    // computerSelection = getComputerChoice();
+    // console.log(computerSelection);
+    // alert(playRound(playerSelection, computerSelection));
+    // //round 2
+    // playerSelection = prompt("Please type your choice: Rock, paper, scissors");
+    // computerSelection = getComputerChoice();
+    // console.log(computerSelection);
+    // alert(playRound(playerSelection, computerSelection));
+    // //round 3
+    // playerSelection = prompt("Please type your choice: Rock, paper, scissors");
+    // computerSelection = getComputerChoice();
+    // console.log(computerSelection);
+    // alert(playRound(playerSelection, computerSelection));
+    // //round 4
+    // playerSelection = prompt("Please type your choice: Rock, paper, scissors");
+    // computerSelection = getComputerChoice();
+    // console.log(computerSelection);
+    // alert(playRound(playerSelection, computerSelection));
+    // //round 5
+    // playerSelection = prompt("Please type your choice: Rock, paper, scissors");
+    // computerSelection = getComputerChoice();
+    // console.log(computerSelection);
+    // alert(playRound(playerSelection, computerSelection));
 
-    if (computerWinCounter > playerWinCounter) {
-        alert("You have " + playerWinCounter + " points. The computer has " + computerWinCounter + " points. You lose. Refresh to play again.")
-    }
-    else if (playerWinCounter > computerWinCounter) {
-        alert("You have " + playerWinCounter + " points. The computer has " + computerWinCounter + " points. You win. Refresh to play again.")
-    }
-    else {
-        alert("You have " + playerWinCounter + " points. The computer has " + computerWinCounter + " points. You draw. Refresh to play again.")
-    }
+    // if (computerWinCounter > playerWinCounter) {
+    //     alert("You have " + playerWinCounter + " points. The computer has " + computerWinCounter + " points. You lose. Refresh to play again.")
+    // }
+    // else if (playerWinCounter > computerWinCounter) {
+    //     alert("You have " + playerWinCounter + " points. The computer has " + computerWinCounter + " points. You win. Refresh to play again.")
+    // }
+    // else {
+    //     alert("You have " + playerWinCounter + " points. The computer has " + computerWinCounter + " points. You draw. Refresh to play again.")
+    // }
 }
 
-game();
+// game();
