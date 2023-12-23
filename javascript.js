@@ -10,6 +10,8 @@ function getComputerChoice() {
     };
     return choice;
 }
+
+//set maximum points and starting count for each player
 let max_points = 5;
 let computerWinCounter = 0;
 let playerWinCounter = 0;
@@ -52,6 +54,7 @@ function playRound(playerSelection, computerSelection) {
     }
 };
 
+//define game end (i.e. when any player reaches 5 points)
 function checkGameEnd() {
     if (computerWinCounter == max_points || playerWinCounter == max_points) {
         if (computerWinCounter > playerWinCounter) {
@@ -65,6 +68,7 @@ function checkGameEnd() {
     }
 }
 
+//create results field
 let result = document.createElement('div');
 result.textContent = "The result will be displayed here.";
 let result_field = document.createElement('div');
@@ -73,6 +77,7 @@ result_field.style = "border: 1px solid black; width: 300px; height: 100px; marg
 container.appendChild(result_field);
 result_field.appendChild(result);
 
+//define event listeners for buttons to play the game, display results and announce winner
 let buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
